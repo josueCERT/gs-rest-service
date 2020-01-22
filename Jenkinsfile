@@ -10,6 +10,7 @@ pipeline {
     stage('test') {
       steps {
         bat 'gradlew test '
+        junit '**/reports/junit/*.xml'
       }
     }
 
