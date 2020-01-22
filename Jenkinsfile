@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         withGradle() {
-          bat '.\\complete\\gradlew test'
+          bat 'gradlew test'
         }
 
       }
