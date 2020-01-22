@@ -1,4 +1,4 @@
-PIPELINE {
+pipeline {
   agent any
   stages {
     stage('build') {
@@ -16,8 +16,6 @@ PIPELINE {
       post { //post build action for the stage
               junit '**/reports/junit/*.xml'
        }
-
-
     }
 
   }
