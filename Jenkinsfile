@@ -7,6 +7,10 @@ pipeline {
           bat 'cd  complete'
         }
 
+        withGradle() {
+          bat 'gradlew test'
+        }
+
       }
     }
 
