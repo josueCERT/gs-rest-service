@@ -14,7 +14,10 @@ pipeline {
       }
 
       post { //post build action for the stage
-              junit '**/reports/junit/*.xml'
+        always {
+         junit '**/reports/junit/*.xml'
+        }
+
        }
     }
 
