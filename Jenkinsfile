@@ -15,7 +15,7 @@ pipeline {
 
       post { //post build action for the stage
         always {
-         junit '**/reports/junit/*.xml'
+         junit '/test-results/test/*.xml'
         }
 
        }
