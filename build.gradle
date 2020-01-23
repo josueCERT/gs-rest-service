@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.2.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
+	id "com.palantir.docker" version "0.24.0"
 }
 
 group = 'com.example'
@@ -19,6 +20,25 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
+
+
+docker {
+	name "${project.group}/${jar.baseName}"
+	files jar.archivePath
+	buildArgs(['JAR_FILE': "${jar.archiveName}"])
+}
+
+
+task printDockerName() {
+	doLast {
+		println("printDockerName")
+		println(docker.name)
+		println(jar.archiveName)
+		println(jar.archivePath)
+	}
+}
+
+docker.dependsOn(assemble)
 
 test {
 	useJUnitPlatform()

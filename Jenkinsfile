@@ -14,12 +14,24 @@ pipeline {
       }
 
       post { //post build action for the stage
-        always {
-         junit '/build/test-results/test/*.xml'
-        }
-
+            always {
+             junit '/build/test-results/test/*.xml'
+            }
        }
     }
+
+    stage('build image') {
+          steps {
+            bat 'gradlew docker '
+          }
+     }
+
+     stage('Aqua image scanner') {
+                    steps {
+                      aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: '', onDisallowed: 'fail', outputFormat: 'html'
+                    }
+      }
+
 
   }
 }
