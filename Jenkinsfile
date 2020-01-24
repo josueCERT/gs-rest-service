@@ -38,7 +38,7 @@ pipeline {
                                                // bat ' docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan'
                                                // bat 'timeout /t 1'
                                                bat 'wget -qO clair-scanner https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_windows_386.exe'
-                                               bat './clair-scanner --ip=172.18.41.161 com.example/rest-service'
+                                               bat 'clair-scanner --ip=172.18.41.161 com.example/rest-service'
                                              }
                           }
          }
