@@ -26,12 +26,24 @@ pipeline {
           }
      }
 
-     stage('Aqua image scanner') {
+     stage('scan image (aquaMicroscanner)') {
                     steps {
                       // aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: '', onDisallowed: 'fail', outputFormat: 'html'
                       aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: 'exit 0', onDisallowed: 'fail', outputFormat: 'html'
                     }
       }
+
+      stage('publish image') {
+                          steps {
+                            bat 'echo "publish image"'
+                          }
+      }
+
+       stage('deploy to test') {
+                                steps {
+                                  bat 'echo "deploy to test"'
+                                }
+       }
 
 
   }
