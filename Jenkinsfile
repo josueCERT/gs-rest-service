@@ -23,6 +23,7 @@ pipeline {
      }
     stage('scan image') {
          parallel {
+            /*
             stage('scan with AquaMicroscanner') {
                                 steps {
                                   // aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: '', onDisallowed: 'fail', outputFormat: 'html'
@@ -31,6 +32,9 @@ pipeline {
                                    }
                                 }
              }
+             */
+
+
               stage('scan with Clair') {
                                              steps {
                                                // bat 'docker run  -d --name db arminc/clair-db'
