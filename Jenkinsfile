@@ -33,7 +33,7 @@ pipeline {
              }
               stage('scan with Clair') {
                                              steps {
-                                               bat 'CMD docker run  -d --name db arminc/clair-db'
+                                               sh 'docker run  -d --name db arminc/clair-db || true'
                                                bat 'timeout /t 15'
                                                bat 'CMD docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan'
                                                bat 'timeout /t 1'
