@@ -33,10 +33,10 @@ pipeline {
              }
               stage('scan with Clair') {
                                              steps {
-                                               bat 'docker rm db'
+                                               bat 'docker rm -f db'
                                                bat 'docker run  -d --name db arminc/clair-db'
                                                bat 'timeout /t 15'
-                                               bat 'docker rm clair'
+                                               bat 'docker rm -f clair'
                                                bat 'docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan'
                                                bat 'timeout /t 1'
                                                bat 'wget -qO clair-scanner https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_windows_386.exe'
