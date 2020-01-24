@@ -29,7 +29,10 @@ pipeline {
      stage('scan image (aquaMicroscanner)') {
                     steps {
                       // aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: '', onDisallowed: 'fail', outputFormat: 'html'
-                      aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: 'exit 0', onDisallowed: 'fail', outputFormat: 'html'
+                       catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                                          aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+                       }
+
                     }
       }
 
