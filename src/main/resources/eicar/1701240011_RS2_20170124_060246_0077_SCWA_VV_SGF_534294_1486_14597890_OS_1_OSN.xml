@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<csn:OilSpill xmlns:csn="http://www.emsa.europa.eu/csndc" xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.emsa.europa.eu/csndc  https://csndc.emsa.europa.eu/schemas/csndc/1_3_4/csndc_os.xsd">
+  <csn:eventid>1701240011_RS2_20170124_060246_0077_SCWA_VV_SGF_534294_1486_14597890_OS_1</csn:eventid>
+  <csn:origin>DETECTED</csn:origin>
+  <csn:center>
+    <gml:pos srsName="EPSG:4326">58.508726 4.911665</gml:pos>
+  </csn:center>
+  <csn:geometry>
+    <gml:Polygon srsName="EPSG:4326">
+      <gml:metaDataProperty>
+        <gml:GenericMetaData>
+          <csn:extension>
+            <csn:area uom="m2">689091.47</csn:area>
+            <csn:length uom="m">1792.95</csn:length>
+            <csn:width uom="m">1215.43</csn:width>
+          </csn:extension>
+        </gml:GenericMetaData>
+      </gml:metaDataProperty>
+      <gml:exterior>
+        <gml:LinearRing>
+          <gml:posList>58.511946 4.927865 58.511636 4.927751 58.511291 4.926396 58.510965 4.921673 58.510584 4.919078 58.509775 4.917553 58.509275 4.916141 58.509293 4.912773 58.508519 4.912488 58.506930 4.909142 58.505882 4.909983 58.504214 4.910596 58.502416 4.909321 58.501183 4.910401 58.500439 4.909821 58.501326 4.907386 58.503137 4.903758 58.505543 4.902189 58.506514 4.905307 58.509390 4.905445 58.511224 4.907960 58.512962 4.909828 58.514522 4.913471 58.513539 4.915257 58.513050 4.916918 58.513461 4.919217 58.513157 4.920639 58.512119 4.924553 58.511946 4.927865</gml:posList>
+        </gml:LinearRing>
+      </gml:exterior>
+    </gml:Polygon>
+  </csn:geometry>
+  <csn:timeStamp>2017-01-24T06:02:46.260Z</csn:timeStamp>
+  <csn:dataSource>KSAT</csn:dataSource>
+  <csn:extension>
+    <csn:area uom="m2">689091.47</csn:area>
+    <csn:length uom="m">1792.95</csn:length>
+    <csn:width uom="m">1215.43</csn:width>
+    <csn:orientation uom="dd">247.33</csn:orientation>
+  </csn:extension>
+  <csn:imageIdentifier type="SAR">1701240011_RS2_20170124_060246_0077_SCWA_VV_SGF_534294_1486_14597890</csn:imageIdentifier>
+  <csn:classificationLevel>0</csn:classificationLevel>
+  <csn:auxiliaryDataRef>
+    <csn:auxiliaryData>
+      <csn:dataKey>OS_CLIP_IMAGE</csn:dataKey>
+      <csn:dataReference>1701240011_RS2_20170124_060246_0077_SCWA_VV_SGF_534294_1486_14597890_OS_1_OSN_CLIP.tif</csn:dataReference>
+      <csn:dataDescription>SAR image clip</csn:dataDescription>
+    </csn:auxiliaryData>
+  </csn:auxiliaryDataRef>
+  <csn:analysisSpecific>
+    <csn:slickTechParameter>
+      <csn:parameter>typeCharacteristics</csn:parameter>
+      <csn:value>Angular</csn:value>
+      <csn:description>Oil spill type characteristics</csn:description>
+      <csn:importance>0.0632911</csn:importance>
+    </csn:slickTechParameter>
+    <csn:slickTechParameter>
+      <csn:parameter>edgeCharacteristics</csn:parameter>
+      <csn:value>Diffuse</csn:value>
+      <csn:description>Oil spill edge characteristics</csn:description>
+      <csn:importance>0.0949367</csn:importance>
+    </csn:slickTechParameter>
+    <csn:slickTechParameter>
+      <csn:parameter>contrastCharacteristics</csn:parameter>
+      <csn:value>Variable</csn:value>
+      <csn:description>Oil spill contrast characteristics</csn:description>
+      <csn:importance>0.0632911</csn:importance>
+    </csn:slickTechParameter>
+    <csn:slickTechParameter>
+      <csn:parameter>textureCharacteristics</csn:parameter>
+      <csn:value>Rough</csn:value>
+      <csn:description>Oil spill texture characteristics</csn:description>
+      <csn:importance>0.0949367</csn:importance>
+    </csn:slickTechParameter>
+    <csn:slickTechParameter>
+      <csn:parameter>outlineCharacteristics</csn:parameter>
+      <csn:value>Continious</csn:value>
+      <csn:description>Oil spill outline characteristics</csn:description>
+      <csn:importance>0.0632911</csn:importance>
+    </csn:slickTechParameter>
+    <csn:slickTechParameter>
+      <csn:parameter>presenceOfNaturalSlickInVicinity</csn:parameter>
+      <csn:value>false</csn:value>
+      <csn:description>Presence of natural slick in vicinity of the oil spill</csn:description>
+      <csn:importance>0</csn:importance>
+    </csn:slickTechParameter>
+    <csn:slickTechParameter>
+      <csn:parameter>SARDerivedWindSpeed</csn:parameter>
+      <csn:value>2.3758</csn:value>
+      <csn:description>SAR derived wind speed</csn:description>
+      <csn:importance>0.0506329</csn:importance>
+    </csn:slickTechParameter>
+    <csn:slickTechParameter>
+      <csn:parameter>windHistoryAssessment</csn:parameter>
+      <csn:value>No match</csn:value>
+      <csn:description>Oil spill shape versus historical wind information</csn:description>
+      <csn:importance>0.189873</csn:importance>
+    </csn:slickTechParameter>
+    <csn:slickTechParameter>
+      <csn:parameter>possibleSourceAssessment</csn:parameter>
+      <csn:value>Unknown</csn:value>
+      <csn:description>Oil spill possible source assessment</csn:description>
+      <csn:importance>0</csn:importance>
+    </csn:slickTechParameter>
+    <csn:slickTechParameter>
+      <csn:parameter>repeatedObservation</csn:parameter>
+      <csn:value>false</csn:value>
+      <csn:description>Oil spill related to observed oil spill in same location within the previous 3 days</csn:description>
+      <csn:importance>0</csn:importance>
+    </csn:slickTechParameter>
+  </csn:analysisSpecific>
+  <csn:meteoConditions>
+    <csn:meteoWind>
+      <csn:dataSource>ncep - Assimilated 10m wind</csn:dataSource>
+      <csn:dataType>Assimilated wind</csn:dataType>
+      <csn:dataValidity>true</csn:dataValidity>
+      <csn:windIntensity>5.243674</csn:windIntensity>
+      <csn:windDirection>227</csn:windDirection>
+    </csn:meteoWind>
+    <csn:SARWind>
+      <csn:dataSource>SARTool - SAR ocean wind</csn:dataSource>
+      <csn:dataType>SAR ocean wind</csn:dataType>
+      <csn:dataValidity>true</csn:dataValidity>
+      <csn:windIntensity>2.375798</csn:windIntensity>
+      <csn:windDirection>226</csn:windDirection>
+    </csn:SARWind>
+  </csn:meteoConditions>
+</csn:OilSpill>

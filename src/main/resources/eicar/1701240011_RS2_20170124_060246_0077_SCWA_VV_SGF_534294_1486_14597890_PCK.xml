@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<csn:dataPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:csn="http://www.emsa.europa.eu/csndc" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.emsa.europa.eu/csndc http://www.emsa.europa.eu/schemas/csndc/DataPackage/csndc_pkg.xsd">
+  <csn:packageInfo>
+    <csn:packageId>1701240011_RS2_20170124_060246_0077_SCWA_VV_SGF_534294_1486_14597890_OSN</csn:packageId>
+    <csn:packageType>OS_NOTIFICATION</csn:packageType>
+    <csn:operationType>TEST</csn:operationType>
+  </csn:packageInfo>
+  <csn:eoProduct>
+    <csn:identifier>1701240011_RS2_20170124_060246_0077_SCWA_VV_SGF_534294_1486_14597890</csn:identifier>
+  </csn:eoProduct>
+  <csn:oilSpills total="1">
+    <csn:oilSpillReference>
+      <csn:identifier>1701240011_RS2_20170124_060246_0077_SCWA_VV_SGF_534294_1486_14597890_OS_1</csn:identifier>
+      <csn:fileName>1701240011_RS2_20170124_060246_0077_SCWA_VV_SGF_534294_1486_14597890_OS_1_OSN.xml</csn:fileName>
+    </csn:oilSpillReference>
+  </csn:oilSpills>
+</csn:dataPackage>
