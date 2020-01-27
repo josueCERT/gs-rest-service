@@ -50,6 +50,7 @@ pipeline {
                                                       ./clair-scanner --ip="$DOCKER_GATEWAY" com.example/rest-service || exit 0
                                                     '''
                                              }
+               }
 
          }
     }
