@@ -24,7 +24,7 @@ pipeline {
      }
     stage('scan image') {
          parallel {
-            /*
+
             stage('scan with AquaMicroscanner') {
                                 steps {
                                   // aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: '', onDisallowed: 'fail', outputFormat: 'html'
@@ -33,9 +33,9 @@ pipeline {
                                    }
                                 }
              }
-             */
 
 
+/*
               stage('scan with Clair') {
                                              steps {
                                                // bat 'docker run  -d --name db arminc/clair-db'
@@ -47,7 +47,7 @@ pipeline {
                                                // bat 'echo Y | cacls clair-scanner.exe /g everyone:f'
                                                sh 'clair-scanner --ip=172.18.41.161 com.example/rest-service'
                                              }
-                          }
+                          }*/
          }
     }
       stage('publish image') {
