@@ -24,7 +24,7 @@ pipeline {
      }
     stage('scan image') {
          parallel {
-
+/*
             stage('scan with AquaMicroscanner') {
                                 steps {
                                   // aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: '', onDisallowed: 'fail', outputFormat: 'html'
@@ -34,20 +34,23 @@ pipeline {
                                 }
              }
 
+}*/
 
-/*
               stage('scan with Clair') {
+
+
                                              steps {
-                                               // bat 'docker run  -d --name db arminc/clair-db'
-                                               // bat 'timeout /t 15'
-                                               // bat ' docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan'
-                                               // bat 'timeout /t 1'
-                                               // bat 'wget -qO clair-scanner.exe https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_windows_386.exe'
-                                               sh 'curl -L https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_windows_386.exe > clair-scanner.exe'
-                                               // bat 'echo Y | cacls clair-scanner.exe /g everyone:f'
-                                               sh 'clair-scanner --ip=172.18.41.161 com.example/rest-service'
+                                              sh '''
+                                                      docker run -d --name db arminc/clair-db
+                                                      sleep 15 # wait for db to come up
+                                                      docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan
+                                                      sleep 1
+                                                      DOCKER_GATEWAY=$(docker network inspect bridge --format "{{range .IPAM.Config}}{{.Gateway}}{{end}}")
+                                                      wget -qO clair-scanner https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_linux_amd64 && chmod +x clair-scanner
+                                                      ./clair-scanner --ip="$DOCKER_GATEWAY" com.example/rest-service || exit 0
+                                                    '''
                                              }
-                          }*/
+
          }
     }
       stage('publish image') {
