@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'who am i'
+        sh 'whoami'
         sh './gradlew build -x test'
       }
     }
