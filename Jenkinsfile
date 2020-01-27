@@ -24,7 +24,7 @@ pipeline {
      }
     stage('scan image') {
          parallel {
-/*
+
             stage('scan with AquaMicroscanner') {
                                 steps {
                                   // aquaMicroscanner imageName: 'com.example/rest-service', notCompliesCmd: '', onDisallowed: 'fail', outputFormat: 'html'
@@ -34,7 +34,7 @@ pipeline {
                                 }
              }
 
-}*/
+
 
               stage('scan with Clair') {
 
