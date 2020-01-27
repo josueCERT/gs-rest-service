@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        bat 'gradlew build -x test'
+        sh './gradlew build -x test'
       }
     }
     stage('test') {
       steps {
-        bat 'gradlew test '
+        sh './gradlew test '
       }
       post { //post build action for the stage
             always {
@@ -18,7 +18,7 @@ pipeline {
     }
     stage('build image') {
           steps {
-            bat 'gradlew docker '
+            sh './gradlew docker '
           }
      }
     stage('scan image') {
@@ -42,21 +42,21 @@ pipeline {
                                                // bat ' docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan'
                                                // bat 'timeout /t 1'
                                                // bat 'wget -qO clair-scanner.exe https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_windows_386.exe'
-                                               bat 'curl -L https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_windows_386.exe > clair-scanner.exe'
+                                               sh 'curl -L https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_windows_386.exe > clair-scanner.exe'
                                                // bat 'echo Y | cacls clair-scanner.exe /g everyone:f'
-                                               bat 'clair-scanner --ip=172.18.41.161 com.example/rest-service'
+                                               sh 'clair-scanner --ip=172.18.41.161 com.example/rest-service'
                                              }
                           }
          }
     }
       stage('publish image') {
                           steps {
-                            bat 'echo "publish image"'
+                            sh 'echo "publish image"'
                           }
       }
        stage('deploy to test') {
                                 steps {
-                                  bat 'echo "deploy to test"'
+                                  sh 'echo "deploy to test"'
                                 }
        }
   }
