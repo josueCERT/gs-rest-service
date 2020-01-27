@@ -42,9 +42,9 @@ pipeline {
                                              steps {
                                                   catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                                                         sh '''
-                                                              docker run -d --name db arminc/clair-db
+                                                              docker run -d --name db arminc/clair-db || true
                                                               sleep 15 # wait for db to come up
-                                                              docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan
+                                                              docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan || true
                                                               sleep 1
                                                               DOCKER_GATEWAY=$(docker network inspect bridge --format "{{range .IPAM.Config}}{{.Gateway}}{{end}}")
                                                               wget -qO clair-scanner https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_linux_amd64 && chmod +x clair-scanner
