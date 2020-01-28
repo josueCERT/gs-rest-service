@@ -25,12 +25,13 @@ dependencies {
 docker {
 	name "${project.group}/${jar.baseName}"
 	files jar.archivePath
-	buildArgs(['JAR_FILE': "${jar.archiveName}"])
+	buildArgs(['JAR_FILE': "${jar.archiveName}", 'RESOURCES_DIR':"${sourceSets.main.output.resourcesDir}"])
 }
 
 
 task printDockerName() {
 	doLast {
+		println(sourceSets.main.output.resourcesDir)
 		println("printDockerName")
 		println(docker.name)
 		println(jar.archiveName)
