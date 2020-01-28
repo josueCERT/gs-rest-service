@@ -24,7 +24,7 @@ dependencies {
 
 docker {
 	name "${project.group}/${jar.baseName}"
-	files jar.archivePath
+	files jar.archivePath , sourceSets.main.output.resourcesDir
 	buildArgs(['JAR_FILE': "${jar.archiveName}", 'RESOURCES_DIR':"${sourceSets.main.output.resourcesDir}"])
 }
 
